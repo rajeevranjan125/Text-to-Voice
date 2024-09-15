@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Speaking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        /* button{
+            background: linear-gradient(45deg,#04619F, #000000);
+            color: #ffffff;
+            padding: 10px 30px 10px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: large;
+            margin-top: 4px;
+        } */
+        button {
+            padding: 10px 30px 10px 30px;
+            border: 2px solid #ffffff;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: large;
+            color: #ffffff;
+        }
+
+        button:hover {
+            border-color: #06f;
+            color: #06f;
+            transition: 0.4s;
+            transform: scale(1.04);
+        }
+
+        #input-text {
+            padding: 10px 300px 10px 3px;
+            margin-right: 10px;
+            font-size: large;
+            border: #ffffff;
+          
+
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            /* color: #ffffff; */
+            color: #06f;
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg,#04619F,#000000);
+        }
+        h1{
+          margin-bottom: 30px;
+        }
+        .text-para{
+            color: #ffffff;
+            display: inline;
+            font-size: smaller;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="para"><h1>T<p class="text-para">ext to</p> V<p class="text-para">oice</p></h1></div>
+        <div class="box">
+            <input type="text" id="input-text" placeholder="Enter your text" required>
+        <button id="btn" onclick="speak()">speak</button>
+        </div>
+    </div>
+    <script>
+        const speak = () => {
+            var text = document.getElementById('input-text').value;
+            var utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance)
+        }
+
+
+    </script>
+
+</body>
+
+</html
